@@ -42,42 +42,49 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Render toggleable filter buttons for Faction and Unit Type
     function renderFilters() {
-      const factions = new Set();
-      const unitTypes = new Set();
-      allUnits.forEach(unitCode => {
-        const unitInfo = combinedData[unitCode];
-        factions.add(unitInfo.faction);
-        unitTypes.add(unitInfo.unitType);
-      });
+        const factions = new Set();
+        const unitTypes = new Set();
+        allUnits.forEach(unitCode => {
+          const unitInfo = combinedData[unitCode];
+          factions.add(unitInfo.faction);
+          unitTypes.add(unitInfo.unitType);
+        });
+        
+        filtersContainer.innerHTML = "";
+        
+        // Faction filters using icons
+        const factionDiv = document.createElement("div");
+        factionDiv.className = "filter-section";
+        factionDiv.innerHTML = "<strong>Faction:</strong> ";
+        factions.forEach(faction => {
+          const btn = document.createElement("button");
+          btn.className = "filter-button faction-filter";
+          btn.onclick = () => toggleFilter("faction", faction, btn);
+          
+          const img = document.createElement("img");
+          img.src = `images/faction_${faction.toLowerCase()}.webp`;
+          img.alt = faction;
+          img.className = "filter-icon";
+          btn.appendChild(img);
+          
+          factionDiv.appendChild(btn);
+        });
+        filtersContainer.appendChild(factionDiv);
+        
+        // Unit Type filters remain as text buttons
+        const unitTypeDiv = document.createElement("div");
+        unitTypeDiv.className = "filter-section";
+        unitTypeDiv.innerHTML = "<strong>Unit Type:</strong> ";
+        unitTypes.forEach(type => {
+          const btn = document.createElement("button");
+          btn.textContent = type;
+          btn.className = "filter-button";
+          btn.onclick = () => toggleFilter("unitType", type, btn);
+          unitTypeDiv.appendChild(btn);
+        });
+        filtersContainer.appendChild(unitTypeDiv);
+      }
       
-      filtersContainer.innerHTML = "";
-      
-      // Faction filters
-      const factionDiv = document.createElement("div");
-      factionDiv.className = "filter-section";
-      factionDiv.innerHTML = "<strong>Faction:</strong> ";
-      factions.forEach(faction => {
-        const btn = document.createElement("button");
-        btn.textContent = faction;
-        btn.className = "filter-button";
-        btn.onclick = () => toggleFilter("faction", faction, btn);
-        factionDiv.appendChild(btn);
-      });
-      filtersContainer.appendChild(factionDiv);
-      
-      // Unit Type filters
-      const unitTypeDiv = document.createElement("div");
-      unitTypeDiv.className = "filter-section";
-      unitTypeDiv.innerHTML = "<strong>Unit Type:</strong> ";
-      unitTypes.forEach(type => {
-        const btn = document.createElement("button");
-        btn.textContent = type;
-        btn.className = "filter-button";
-        btn.onclick = () => toggleFilter("unitType", type, btn);
-        unitTypeDiv.appendChild(btn);
-      });
-      filtersContainer.appendChild(unitTypeDiv);
-    }
     
     function toggleFilter(filterType, value, button) {
       if (filterType === "faction") {

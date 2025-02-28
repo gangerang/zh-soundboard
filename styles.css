@@ -18,6 +18,26 @@ body {
     margin-top: 10px;
   }
   
+  /* Styles for the filter buttons */
+  .filter-section {
+    margin: 10px 0;
+  }
+  
+  .filter-button {
+    padding: 6px 10px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    background-color: #eee;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .filter-button.active {
+    background-color: #4caf50;
+    color: white;
+    border-color: #4caf50;
+  }
+  
   .unit {
     background: #fff;
     margin-bottom: 20px;
@@ -30,7 +50,13 @@ body {
     margin-top: 0;
   }
   
-  /* Row for actions */
+  .classification-info {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  /* Rows for actions */
   .actions-row {
     display: flex;
     flex-wrap: wrap;
@@ -38,13 +64,11 @@ body {
     margin-bottom: 10px;
   }
   
-  /* Main actions row with 4 equally spaced cells */
-  .main-actions-row .action-cell {
+  .action-cell {
     flex: 1;
     text-align: center;
   }
   
-  /* Button styling */
   .action-button {
     padding: 8px 12px;
     font-size: 14px;

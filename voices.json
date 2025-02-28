@@ -6956,61 +6956,6 @@
             "Type": "world shrouded everyone"
         }
     },
-    "FrequencyJammer": {
-        "Select": {
-            "Sounds": [
-                "vfreseb",
-                "vfresec",
-                "vfresed",
-                "vfresee"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "Create": {
-            "Sounds": [
-                "vfresea"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "110",
-            "MinVolume": "100",
-            "Priority": "high",
-            "Type": "world global player"
-        },
-        "Move": {
-            "Sounds": [
-                "vfremoa",
-                "vfremob",
-                "vfremoc",
-                "vfremod",
-                "vfremoe"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "Attack": {
-            "Sounds": [
-                "vfreata",
-                "vfreatb",
-                "vfreatc",
-                "vfreatd",
-                "vfreate"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        }
-    },
     "Helix": {
         "Select": {
             "Sounds": [

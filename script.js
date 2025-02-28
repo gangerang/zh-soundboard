@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const voices = unitInfo.voices;
             const mainActions = ["create", "select", "move", "attack"];
 
-            // First row: main actions
+            // First row: main actions (buttons only appear if the action exists, left-aligned)
             const mainActionsRow = document.createElement("div");
             mainActionsRow.className = "actions-row main-actions-row";
             mainActions.forEach(actionName => {
@@ -176,8 +176,6 @@ document.addEventListener("DOMContentLoaded", function() {
                         break;
                     }
                 }
-                const cell = document.createElement("div");
-                cell.className = "action-cell";
                 if (foundActionKey) {
                     const btn = document.createElement("button");
                     btn.className = "action-button";
@@ -185,9 +183,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     btn.addEventListener("click", () =>
                         playRandomSound(unitCode, foundActionKey)
                     );
-                    cell.appendChild(btn);
+                    mainActionsRow.appendChild(btn);
                 }
-                mainActionsRow.appendChild(cell);
             });
             unitContainer.appendChild(mainActionsRow);
 

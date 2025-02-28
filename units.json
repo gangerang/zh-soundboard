@@ -1,0 +1,422 @@
+[
+    {
+        "Unit Name": "Ranger",
+        "Unit Code": "Ranger",
+        "Faction": "USA",
+        "Unit Type": "Infantry"
+    },
+    {
+        "Unit Name": "Missile Defender",
+        "Unit Code": "MissileDefender",
+        "Faction": "USA",
+        "Unit Type": "Infantry"
+    },
+    {
+        "Unit Name": "Crusader Tank",
+        "Unit Code": "CrusaderTank",
+        "Faction": "USA",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Tomahawk",
+        "Unit Code": "Tomahawk",
+        "Faction": "USA",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Raptor",
+        "Unit Code": "Raptor",
+        "Faction": "USA",
+        "Unit Type": "Aircraft"
+    },
+    {
+        "Unit Name": "Comanche",
+        "Unit Code": "Comanche",
+        "Faction": "USA",
+        "Unit Type": "Aircraft"
+    },
+    {
+        "Unit Name": "Chinook",
+        "Unit Code": "Chinook",
+        "Faction": "USA",
+        "Unit Type": "Aircraft"
+    },
+    {
+        "Unit Name": "Aurora Bomber",
+        "Unit Code": "AuroraBomber",
+        "Faction": "USA",
+        "Unit Type": "Aircraft"
+    },
+    {
+        "Unit Name": "Ambulance",
+        "Unit Code": "Ambulance",
+        "Faction": "USA",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Humvee",
+        "Unit Code": "Humvee",
+        "Faction": "USA",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Colonel Burton",
+        "Unit Code": "ColonelBurton",
+        "Faction": "USA",
+        "Unit Type": "Hero Infantry"
+    },
+    {
+        "Unit Name": "USA Dozer",
+        "Unit Code": "DozerUSA",
+        "Faction": "USA",
+        "Unit Type": "Builder"
+    },
+    {
+        "Unit Name": "Paladin Tank",
+        "Unit Code": "PaladinTank",
+        "Faction": "USA",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Pathfinder",
+        "Unit Code": "Pathfinder",
+        "Faction": "USA",
+        "Unit Type": "Infantry"
+    },
+    {
+        "Unit Name": "Stealth Fighter",
+        "Unit Code": "StealthFighter",
+        "Faction": "USA",
+        "Unit Type": "Aircraft"
+    },
+    {
+        "Unit Name": "Pilot",
+        "Unit Code": "Pilot",
+        "Faction": "USA",
+        "Unit Type": "Support Infantry"
+    },
+    {
+        "Unit Name": "Red Guard",
+        "Unit Code": "RedGuard",
+        "Faction": "China",
+        "Unit Type": "Infantry"
+    },
+    {
+        "Unit Name": "Tank Hunter",
+        "Unit Code": "TankHunter",
+        "Faction": "China",
+        "Unit Type": "Infantry"
+    },
+    {
+        "Unit Name": "Battle Master Tank",
+        "Unit Code": "BattleMasterTank",
+        "Faction": "China",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Inferno Cannon",
+        "Unit Code": "InfernoCannon",
+        "Faction": "China",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Mig",
+        "Unit Code": "Mig",
+        "Faction": "China",
+        "Unit Type": "Aircraft"
+    },
+    {
+        "Unit Name": "Dragon Tank",
+        "Unit Code": "DragonTank",
+        "Faction": "China",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Hacker",
+        "Unit Code": "Hacker",
+        "Faction": "China",
+        "Unit Type": "Infantry"
+    },
+    {
+        "Unit Name": "Troop Crawler",
+        "Unit Code": "TroopCrawler",
+        "Faction": "China",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Overlord Tank",
+        "Unit Code": "OverlordTank",
+        "Faction": "China",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Gattling Tank",
+        "Unit Code": "GattlingTank",
+        "Faction": "China",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Black Lotus",
+        "Unit Code": "BlackLotus",
+        "Faction": "China",
+        "Unit Type": "Hero Infantry"
+    },
+    {
+        "Unit Name": "Supply Truck",
+        "Unit Code": "SupplyTruck",
+        "Faction": "China",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "China Dozer",
+        "Unit Code": "DozerChina",
+        "Faction": "China",
+        "Unit Type": "Builder"
+    },
+    {
+        "Unit Name": "Nuke Cannon",
+        "Unit Code": "NukeCannon",
+        "Faction": "China",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Rebel",
+        "Unit Code": "Rebel",
+        "Faction": "GLA",
+        "Unit Type": "Infantry"
+    },
+    {
+        "Unit Name": "Terrorist",
+        "Unit Code": "Terrorist",
+        "Faction": "GLA",
+        "Unit Type": "Infantry"
+    },
+    {
+        "Unit Name": "Car Bomb",
+        "Unit Code": "CarBomb",
+        "Faction": "GLA",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Scorpion Tank",
+        "Unit Code": "ScorpionTank",
+        "Faction": "GLA",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Rocket Buggy",
+        "Unit Code": "RocketBuggy",
+        "Faction": "GLA",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Radar Van",
+        "Unit Code": "RadarVan",
+        "Faction": "GLA",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Toxin Tractor",
+        "Unit Code": "ToxinTractor",
+        "Faction": "GLA",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Technical",
+        "Unit Code": "Technical",
+        "Faction": "GLA",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Bomb Truck",
+        "Unit Code": "BombTruck",
+        "Faction": "GLA",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Quad Cannon",
+        "Unit Code": "QuadCannon",
+        "Faction": "GLA",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Worker",
+        "Unit Code": "Worker",
+        "Faction": "GLA",
+        "Unit Type": "Builder"
+    },
+    {
+        "Unit Name": "Hijacker",
+        "Unit Code": "Hijacker",
+        "Faction": "GLA",
+        "Unit Type": "Infantry"
+    },
+    {
+        "Unit Name": "Jarmen Kell",
+        "Unit Code": "JarmenKell",
+        "Faction": "GLA",
+        "Unit Type": "Hero Infantry"
+    },
+    {
+        "Unit Name": "Scud Launcher",
+        "Unit Code": "ScudLauncher",
+        "Faction": "GLA",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Marauder Tank",
+        "Unit Code": "MarauderTank",
+        "Faction": "GLA",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "RPG Trooper",
+        "Unit Code": "RPGTrooper",
+        "Faction": "GLA",
+        "Unit Type": "Infantry"
+    },
+    {
+        "Unit Name": "Angry Mob",
+        "Unit Code": "AngryMob",
+        "Faction": "GLA",
+        "Unit Type": "Infantry"
+    },
+    {
+        "Unit Name": "Stinger Soldier",
+        "Unit Code": "StingerSoldier",
+        "Faction": "GLA",
+        "Unit Type": "Infantry"
+    },
+    {
+        "Unit Name": "Saboteur",
+        "Unit Code": "Saboteur",
+        "Faction": "GLA",
+        "Unit Type": "Infantry"
+    },
+    {
+        "Unit Name": "Avenger",
+        "Unit Code": "Avenger",
+        "Faction": "USA",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Battle Bus",
+        "Unit Code": "BattleBus",
+        "Faction": "GLA",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Combat Cycle",
+        "Unit Code": "CombatCycle",
+        "Faction": "GLA",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Helix",
+        "Unit Code": "Helix",
+        "Faction": "China",
+        "Unit Type": "Aircraft"
+    },
+    {
+        "Unit Name": "Listening Outpost",
+        "Unit Code": "ListeningOutpost",
+        "Faction": "China",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Microwave Tank",
+        "Unit Code": "MicrowaveTank",
+        "Faction": "USA",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Battleship",
+        "Unit Code": "Battleship",
+        "Faction": "USA",
+        "Unit Type": "Special"
+    },
+    {
+        "Unit Name": "Aircraft Carrier",
+        "Unit Code": "AircraftCarrier",
+        "Faction": "USA",
+        "Unit Type": "Special"
+    },
+    {
+        "Unit Name": "Spectre Gunship",
+        "Unit Code": "SpectreGunship",
+        "Faction": "USA",
+        "Unit Type": "Aircraft"
+    },
+    {
+        "Unit Name": "SUV",
+        "Unit Code": "SUV",
+        "Faction": "USA",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Aurora",
+        "Unit Code": "Aurora",
+        "Faction": "USA",
+        "Unit Type": "Aircraft"
+    },
+    {
+        "Unit Name": "King Raptor",
+        "Unit Code": "KingRaptor",
+        "Faction": "USA",
+        "Unit Type": "Aircraft"
+    },
+    {
+        "Unit Name": "Combat Chinook",
+        "Unit Code": "CombatChinook",
+        "Faction": "USA",
+        "Unit Type": "Aircraft"
+    },
+    {
+        "Unit Name": "Laser Crusader",
+        "Unit Code": "LaserCrusader",
+        "Faction": "USA",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Assault Troop Crawler",
+        "Unit Code": "AssaultTroopCrawler",
+        "Faction": "USA",
+        "Unit Type": "Vehicle"
+    },
+    {
+        "Unit Name": "Super Hacker",
+        "Unit Code": "SuperHacker",
+        "Faction": "China",
+        "Unit Type": "Infantry"
+    },
+    {
+        "Unit Name": "Toxin Rebel",
+        "Unit Code": "ToxinRebel",
+        "Faction": "GLA",
+        "Unit Type": "Infantry"
+    },
+    {
+        "Unit Name": "Red Minigunner",
+        "Unit Code": "RedMinigunner",
+        "Faction": "China",
+        "Unit Type": "Infantry"
+    },
+    {
+        "Unit Name": "Toxin RPG Trooper",
+        "Unit Code": "ToxinRPGTrooper",
+        "Faction": "GLA",
+        "Unit Type": "Infantry"
+    },
+    {
+        "Unit Name": "Demo Rebel",
+        "Unit Code": "DemoRebel",
+        "Faction": "GLA",
+        "Unit Type": "Infantry"
+    },
+    {
+        "Unit Name": "Emperor Tank",
+        "Unit Code": "EmperorTank",
+        "Faction": "China",
+        "Unit Type": "Vehicle"
+    }
+]

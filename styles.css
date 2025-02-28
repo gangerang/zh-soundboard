@@ -137,4 +137,20 @@ body {
   .action-button:hover {
     opacity: 0.9;
   }
-  
+
+footer {
+    background-color: #f0f0f0;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #333;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+}
+footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}

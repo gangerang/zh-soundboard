@@ -102,75 +102,93 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Render the soundboard based on current filters and search query
     function renderSoundboard() {
-      soundboardContainer.innerHTML = "";
-      const searchQuery = searchInput.value.toLowerCase();
-      allUnits.forEach(unitCode => {
-        const unitInfo = combinedData[unitCode];
-        // Apply filters
-        if (selectedFactions.size > 0 && !selectedFactions.has(unitInfo.faction)) return;
-        if (selectedUnitTypes.size > 0 && !selectedUnitTypes.has(unitInfo.unitType)) return;
-        if (searchQuery && !unitInfo.unitName.toLowerCase().includes(searchQuery)) return;
-        
-        // Create unit container
-        const unitContainer = document.createElement("div");
-        unitContainer.className = "unit";
-        
-        // Unit title (from units.json)
-        const unitTitle = document.createElement("h2");
-        unitTitle.textContent = unitInfo.unitName;
-        unitContainer.appendChild(unitTitle);
-        
-        // Classification info
-        const classificationInfo = document.createElement("p");
-        classificationInfo.className = "classification-info";
-        classificationInfo.textContent = `Faction: ${unitInfo.faction}, Unit Type: ${unitInfo.unitType}`;
-        unitContainer.appendChild(classificationInfo);
-        
-        // Render voice actions from voices.json.
-        const voices = unitInfo.voices;
-        const mainActions = ["create", "select", "move", "attack"];
-        
-        // First row: main actions
-        const mainActionsRow = document.createElement("div");
-        mainActionsRow.className = "actions-row main-actions-row";
-        mainActions.forEach(actionName => {
-          let foundActionKey = null;
+        soundboardContainer.innerHTML = "";
+        const searchQuery = searchInput.value.toLowerCase();
+      
+        // Sort unit codes alphabetically by unitName
+        const sortedUnitCodes = allUnits.slice().sort((a, b) => {
+          const nameA = combinedData[a].unitName.toLowerCase();
+          const nameB = combinedData[b].unitName.toLowerCase();
+          return nameA.localeCompare(nameB);
+        });
+      
+        sortedUnitCodes.forEach(unitCode => {
+          const unitInfo = combinedData[unitCode];
+          // Create a combined string for filtering: unitName, faction, and unitType.
+          const combinedStr = (
+            unitInfo.unitName + " " + unitInfo.faction + " " + unitInfo.unitType
+          ).toLowerCase();
+      
+          // Filter by search query if provided
+          if (searchQuery && !combinedStr.includes(searchQuery)) return;
+          // Apply toggle filters: if a faction filter is active, unit's faction must be selected.
+          if (selectedFactions.size > 0 && !selectedFactions.has(unitInfo.faction))
+            return;
+          if (selectedUnitTypes.size > 0 && !selectedUnitTypes.has(unitInfo.unitType))
+            return;
+      
+          // Create unit container
+          const unitContainer = document.createElement("div");
+          unitContainer.className = "unit";
+      
+          // Unit title (from units.json)
+          const unitTitle = document.createElement("h2");
+          unitTitle.textContent = unitInfo.unitName;
+          unitContainer.appendChild(unitTitle);
+      
+          // Classification info
+          const classificationInfo = document.createElement("p");
+          classificationInfo.className = "classification-info";
+          classificationInfo.textContent = `Faction: ${unitInfo.faction}, Unit Type: ${unitInfo.unitType}`;
+          unitContainer.appendChild(classificationInfo);
+      
+          // Render voice actions from voices.json.
+          const voices = unitInfo.voices;
+          const mainActions = ["create", "select", "move", "attack"];
+      
+          // First row: main actions
+          const mainActionsRow = document.createElement("div");
+          mainActionsRow.className = "actions-row main-actions-row";
+          mainActions.forEach(actionName => {
+            let foundActionKey = null;
+            for (const action in voices) {
+              if (action.toLowerCase() === actionName) {
+                foundActionKey = action;
+                break;
+              }
+            }
+            const cell = document.createElement("div");
+            cell.className = "action-cell";
+            if (foundActionKey) {
+              const btn = document.createElement("button");
+              btn.className = "action-button";
+              btn.textContent = foundActionKey;
+              btn.addEventListener("click", () =>
+                playRandomSound(unitCode, foundActionKey)
+              );
+              cell.appendChild(btn);
+            }
+            mainActionsRow.appendChild(cell);
+          });
+          unitContainer.appendChild(mainActionsRow);
+      
+          // Second row: other actions
+          const otherActionsRow = document.createElement("div");
+          otherActionsRow.className = "actions-row other-actions-row";
           for (const action in voices) {
-            if (action.toLowerCase() === actionName) {
-              foundActionKey = action;
-              break;
+            if (!mainActions.includes(action.toLowerCase())) {
+              const btn = document.createElement("button");
+              btn.className = "action-button";
+              btn.textContent = action;
+              btn.addEventListener("click", () => playRandomSound(unitCode, action));
+              otherActionsRow.appendChild(btn);
             }
           }
-          const cell = document.createElement("div");
-          cell.className = "action-cell";
-          if (foundActionKey) {
-            const btn = document.createElement("button");
-            btn.className = "action-button";
-            btn.textContent = foundActionKey;
-            btn.addEventListener("click", () => playRandomSound(unitCode, foundActionKey));
-            cell.appendChild(btn);
-          }
-          mainActionsRow.appendChild(cell);
+          unitContainer.appendChild(otherActionsRow);
+      
+          soundboardContainer.appendChild(unitContainer);
         });
-        unitContainer.appendChild(mainActionsRow);
-        
-        // Second row: other actions
-        const otherActionsRow = document.createElement("div");
-        otherActionsRow.className = "actions-row other-actions-row";
-        for (const action in voices) {
-          if (!mainActions.includes(action.toLowerCase())) {
-            const btn = document.createElement("button");
-            btn.className = "action-button";
-            btn.textContent = action;
-            btn.addEventListener("click", () => playRandomSound(unitCode, action));
-            otherActionsRow.appendChild(btn);
-          }
-        }
-        unitContainer.appendChild(otherActionsRow);
-        
-        soundboardContainer.appendChild(unitContainer);
-      });
-    }
+    }      
     
     // Update list when search input changes
     searchInput.addEventListener("input", function() {

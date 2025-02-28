@@ -1442,250 +1442,6 @@
             "Type": "ui voice player"
         }
     },
-    "AuroraBomber": {
-        "Select": {
-            "Sounds": [
-                "vaursea",
-                "vaurseb",
-                "vaursec",
-                "vaursed",
-                "vaursee",
-                "vaursef"
-            ],
-            "Attack": [
-                "gradio1a",
-                "gradio1b",
-                "gradio1c",
-                "gradio1d",
-                "gradio1e",
-                "gradio1f"
-            ],
-            "Decay": [
-                "gradio3a",
-                "gradio3b",
-                "gradio3c",
-                "gradio3d",
-                "gradio3e"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "Create": {
-            "Sounds": [
-                "vaurseg"
-            ],
-            "Attack": [
-                "gradio1a",
-                "gradio1b",
-                "gradio1c",
-                "gradio1d",
-                "gradio1e",
-                "gradio1f"
-            ],
-            "Decay": [
-                "gradio3a",
-                "gradio3b",
-                "gradio3c",
-                "gradio3d",
-                "gradio3e"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "110",
-            "MinVolume": "100",
-            "Priority": "high",
-            "Type": "world global player"
-        },
-        "Move": {
-            "Sounds": [
-                "vaurmoa",
-                "vaurmob",
-                "vaurmoc",
-                "vaurmod",
-                "vaurmoe",
-                "vaurmof"
-            ],
-            "Attack": [
-                "gradio1a",
-                "gradio1b",
-                "gradio1c",
-                "gradio1d",
-                "gradio1e",
-                "gradio1f"
-            ],
-            "Decay": [
-                "gradio3a",
-                "gradio3b",
-                "gradio3c",
-                "gradio3d",
-                "gradio3e"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "Attack": {
-            "Sounds": [
-                "vaurata",
-                "vauratb",
-                "vauratc",
-                "vauratd",
-                "vaurate"
-            ],
-            "Attack": [
-                "gradio1a",
-                "gradio1b",
-                "gradio1c",
-                "gradio1d",
-                "gradio1e",
-                "gradio1f"
-            ],
-            "Decay": [
-                "gradio3a",
-                "gradio3b",
-                "gradio3c",
-                "gradio3d",
-                "gradio3e"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "SuperSonic": {
-            "Sounds": [
-                "vaurspa",
-                "vaurspb",
-                "vaurspc",
-                "vaurspd",
-                "vaurspe"
-            ],
-            "Attack": [
-                "gradio1a",
-                "gradio1b",
-                "gradio1c",
-                "gradio1d",
-                "gradio1e",
-                "gradio1f"
-            ],
-            "Decay": [
-                "gradio3a",
-                "gradio3b",
-                "gradio3c",
-                "gradio3d",
-                "gradio3e"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "ModeSuperSonic": {
-            "Sounds": [
-                "vaurmsa",
-                "vaurmsb",
-                "vaurmsc"
-            ],
-            "Attack": [
-                "gradio1a",
-                "gradio1b",
-                "gradio1c",
-                "gradio1d",
-                "gradio1e",
-                "gradio1f"
-            ],
-            "Decay": [
-                "gradio3a",
-                "gradio3b",
-                "gradio3c",
-                "gradio3d",
-                "gradio3e"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player",
-            "Limit": "1"
-        },
-        "LowFuel": {
-            "Sounds": [
-                "vaurfub",
-                "vaurfua",
-                "vaurfuc"
-            ],
-            "Attack": [
-                "gradio1a",
-                "gradio1b",
-                "gradio1c",
-                "gradio1d",
-                "gradio1e",
-                "gradio1f"
-            ],
-            "Decay": [
-                "gradio3a",
-                "gradio3b",
-                "gradio3c",
-                "gradio3d",
-                "gradio3e"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "120",
-            "MinVolume": "110",
-            "Type": "world player global"
-        },
-        "Falling": {
-            "Sounds": [
-                "vaurfaa",
-                "vaurfab",
-                "vaurfac"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "100",
-            "MinVolume": "80",
-            "Type": "world shrouded player"
-        },
-        "UpgradeBuster": {
-            "Sounds": [
-                "vauru1a",
-                "vauru1a",
-                "vauru1b"
-            ],
-            "Attack": [
-                "gradio1a",
-                "gradio1b",
-                "gradio1c",
-                "gradio1d",
-                "gradio1e",
-                "gradio1f"
-            ],
-            "Decay": [
-                "gradio3a",
-                "gradio3b",
-                "gradio3c",
-                "gradio3d",
-                "gradio3e"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "120",
-            "MinVolume": "110",
-            "Type": "world player global"
-        }
-    },
     "Ambulance": {
         "Select": {
             "Sounds": [
@@ -2756,87 +2512,6 @@
             "Type": "world shrouded everyone"
         }
     },
-    "POWTruckUSA": {
-        "Select": {
-            "Sounds": [
-                "vpousea",
-                "vpouseb",
-                "vpousec",
-                "vpoused",
-                "vpousee"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "Create": {
-            "Sounds": [
-                "vpousef"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "110",
-            "MinVolume": "100",
-            "Priority": "high",
-            "Type": "world global player"
-        },
-        "Move": {
-            "Sounds": [
-                "vpoumoa",
-                "vpoumob",
-                "vpoumoc",
-                "vpoumod",
-                "vpoumoe",
-                "vpoumof"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "Pickup": {
-            "Sounds": [
-                "vpoupia",
-                "vvpoupib",
-                "vpoupic",
-                "vpoupid",
-                "vpoupie"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "Return": {
-            "Sounds": [
-                "vpourea",
-                "vpoureb",
-                "vpourec"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "Crush": {
-            "Sounds": [
-                "vpoucra",
-                "vpoucrb",
-                "vpoucrc"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        }
-    },
     "RedGuard": {
         "Select": {
             "Sounds": [
@@ -3106,20 +2781,6 @@
             ],
             "Volume": "90",
             "Type": "ui voice player"
-        }
-    },
-    "Cin_RedGuard": {
-        "Laugh": {
-            "Sounds": [
-                "iredlab"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Priority": "high",
-            "Volume": "120",
-            "MinVolume": "110",
-            "Type": "world global player"
         }
     },
     "TankHunter": {
@@ -4077,7 +3738,10 @@
         },
         "Create": {
             "Sounds": [
-                "vovesed"
+                "vovesed",
+				"voveu1b",
+				"voveu3b",
+				"voveu2b"
             ],
             "Control": [
                 "random"
@@ -4176,43 +3840,6 @@
             "Priority": "high",
             "Type": "ui voice player",
             "Limit": "1"
-        }
-    },
-    "OverlordTankBunker": {
-        "Create": {
-            "Sounds": [
-                "voveu1b"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        }
-    },
-    "OverlordTankGattlingCannon": {
-        "Create": {
-            "Sounds": [
-                "voveu3b"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "80",
-            "Priority": "high",
-            "Type": "ui voice player"
-        }
-    },
-    "OverlordTankPropagandaTower": {
-        "Create": {
-            "Sounds": [
-                "voveu2b"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
         }
     },
     "GattlingTank": {
@@ -4509,21 +4136,6 @@
             "Type": "world shrouded everyone"
         }
     },
-    "CINE_U03_BlackLotus": {
-        "ModeBuilding": {
-            "Sounds": [
-                "iblambc",
-                "iblambc",
-                "iblambc"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player",
-            "Limit": "1"
-        }
-    },
     "SupplyTruck": {
         "Select": {
             "Sounds": [
@@ -4818,96 +4430,6 @@
                 "random"
             ],
             "Volume": "80",
-            "Type": "ui voice player"
-        }
-    },
-    "POWTruckChina": {
-        "Select": {
-            "Sounds": [
-                "vpocsed",
-                "vpocsee",
-                "vpocred",
-                "vpocsea",
-                "vpocseb"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "Create": {
-            "Sounds": [
-                "vpocsef"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "110",
-            "MinVolume": "100",
-            "Priority": "high",
-            "Type": "world global player"
-        },
-        "Move": {
-            "Sounds": [
-                "vpocmoa",
-                "vpocmoc",
-                "vpocmoe",
-                "vpocpia",
-                "vpocpid",
-                "vpocmob",
-                "vpocmod"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "Pickup": {
-            "Sounds": [
-                "vpocpib",
-                "vpocpic",
-                "vpocpie"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "Return": {
-            "Sounds": [
-                "vpocrea",
-                "vpocreb",
-                "vpocrec"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "UpgradeSubliminal": {
-            "Sounds": [
-                "vpocu1"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "Crush": {
-            "Sounds": [
-                "vpoccra",
-                "vpoccrb",
-                "vpoccrc"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
             "Type": "ui voice player"
         }
     },
@@ -6531,7 +6053,9 @@
                 "ijarsea",
                 "ijarseb",
                 "ijarsed",
-                "ijarsee"
+                "ijarsee",
+				"ijadsea",
+                "ijadsec"
             ],
             "Control": [
                 "random"
@@ -6572,6 +6096,31 @@
                 "ijaratc",
                 "ijaratd",
                 "ijarate"
+            ],
+            "Control": [
+                "random"
+            ],
+            "Volume": "90",
+            "Type": "ui voice player"
+        },
+		"ModeDemo": {
+            "Sounds": [
+                "ijadmda",
+                "ijadmdb",
+                "ijadmdc"
+            ],
+            "Control": [
+                "random"
+            ],
+            "Volume": "90",
+            "Type": "ui voice player",
+            "Limit": "1"
+        },
+        "AttackDemo": {
+            "Sounds": [
+                "ijada2a",
+                "ijada2b",
+                "ijada2c"
             ],
             "Control": [
                 "random"
@@ -6819,86 +6368,6 @@
                 "vmarcra",
                 "vmarcrb",
                 "vmarcrc"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        }
-    },
-    "POWTruckGLA": {
-        "Select": {
-            "Sounds": [
-                "vpogsea",
-                "vpogseb",
-                "vpogsec",
-                "vpogsed",
-                "vpogsee"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "Create": {
-            "Sounds": [
-                "vpogsef"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "110",
-            "MinVolume": "100",
-            "Priority": "high",
-            "Type": "world global player"
-        },
-        "Move": {
-            "Sounds": [
-                "vpogmoa",
-                "vpogmob",
-                "vpogmoc",
-                "vpogmod",
-                "vpogmoe"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "Pickup": {
-            "Sounds": [
-                "vpogpia",
-                "vpogpib",
-                "vpogpic",
-                "vpogpid",
-                "vpogpie"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "Return": {
-            "Sounds": [
-                "vpogrea",
-                "vpogreb",
-                "vpogrec"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "Crush": {
-            "Sounds": [
-                "vpogcra",
-                "vpogcrb",
-                "vpogcrc"
             ],
             "Control": [
                 "random"
@@ -7315,54 +6784,6 @@
             ],
             "Volume": "90",
             "Type": "ui voice player"
-        }
-    },
-    "POW": {
-        "Select": {
-            "Sounds": [
-                "ipowsea",
-                "ipowseb",
-                "ipowsec",
-                "ipowsed",
-                "ipowsee"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "Move": {
-            "Sounds": [
-                "ipowmoa",
-                "ipowmob",
-                "ipowmoc",
-                "ipowmod",
-                "ipowmoe",
-                "ipowmof"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "Die": {
-            "Sounds": [
-                "ipowdia",
-                "ipowdib",
-                "ipowdic",
-                "ipowdid",
-                "ipowdie"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Priority": "LOW",
-            "Limit": "3",
-            "Volume": "90",
-            "PitchShift": "-10 10",
-            "Type": "world shrouded everyone"
         }
     },
     "Saboteur": {
@@ -7908,67 +7329,6 @@
             "Type": "ui voice player"
         }
     },
-    "HelixBunker": {
-        "Create": {
-            "Sounds": [
-                "vhelu2a"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        }
-    },
-    "HelixSpeakerTower": {
-        "Create": {
-            "Sounds": [
-                "vhelu2b"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        }
-    },
-    "HelixGattling": {
-        "Create": {
-            "Sounds": [
-                "vhelu2c"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        }
-    },
-    "HelixNapalmBomb": {
-        "Create": {
-            "Sounds": [
-                "vhelu2d"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "80",
-            "Priority": "high",
-            "Type": "ui voice player"
-        }
-    },
-    "HelixNuclearBomb": {
-        "Create": {
-            "Sounds": [
-                "vhelu2e"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        }
-    },
     "ListeningOutpost": {
         "Select": {
             "Sounds": [
@@ -8357,36 +7717,282 @@
             "Type": "ui voice player"
         }
     },
-    "Aurora": {
-        "UpgradeBunkerBuster": {
-            "Sounds": [
-                "vauru1a",
-                "vauru1a",
-                "vauru1b"
-            ],
-            "Attack": [
-                "gradio1a",
-                "gradio1b",
-                "gradio1c",
-                "gradio1d",
-                "gradio1e",
-                "gradio1f"
-            ],
-            "Decay": [
-                "gradio3a",
-                "gradio3b",
-                "gradio3c",
-                "gradio3d",
-                "gradio3e"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "120",
-            "MinVolume": "110",
-            "Type": "world player global"
-        }
-    },
+	"AuroraBomber": {
+		"Select": {
+			"Sounds": [
+				"vaufsea",
+				"vaufseb",
+				"vaursea",
+				"vaurseb",
+				"vaursec",
+				"vaursed",
+				"vaursee",
+				"vaursef"
+			],
+			"Control": [
+				"random"
+			],
+			"Attack": [
+				"gradio1a",
+				"gradio1b",
+				"gradio1c",
+				"gradio1d",
+				"gradio1e",
+				"gradio1f"
+			],
+			"Decay": [
+				"gradio3a",
+				"gradio3b",
+				"gradio3c",
+				"gradio3d",
+				"gradio3e"
+			],
+			"Volume": "90",
+			"Type": "ui voice player"
+		},
+		"Create": {
+			"Sounds": [
+				"vaufsea",
+				"vaurseg"
+			],
+			"Control": [
+				"random"
+			],
+			"Attack": [
+				"gradio1a",
+				"gradio1b",
+				"gradio1c",
+				"gradio1d",
+				"gradio1e",
+				"gradio1f"
+			],
+			"Decay": [
+				"gradio3a",
+				"gradio3b",
+				"gradio3c",
+				"gradio3d",
+				"gradio3e"
+			],
+			"Volume": "110",
+			"MinVolume": "100",
+			"Priority": "high",
+			"Type": "world global player"
+		},
+		"Attack": {
+			"Sounds": [
+				"vaufata",
+				"vaufatb",
+				"vaufatc",
+				"vaurata",
+				"vauratb",
+				"vauratc",
+				"vauratd",
+				"vaurate"
+			],
+			"Control": [
+				"random"
+			],
+			"Attack": [
+				"gradio1a",
+				"gradio1b",
+				"gradio1c",
+				"gradio1d",
+				"gradio1e",
+				"gradio1f"
+			],
+			"Decay": [
+				"gradio3a",
+				"gradio3b",
+				"gradio3c",
+				"gradio3d",
+				"gradio3e"
+			],
+			"Volume": "90",
+			"Type": "ui voice player"
+		},
+		"Move": {
+			"Sounds": [
+				"vaurmoa",
+				"vaurmob",
+				"vaurmoc",
+				"vaurmod",
+				"vaurmoe",
+				"vaurmof"
+			],
+			"Attack": [
+				"gradio1a",
+				"gradio1b",
+				"gradio1c",
+				"gradio1d",
+				"gradio1e",
+				"gradio1f"
+			],
+			"Decay": [
+				"gradio3a",
+				"gradio3b",
+				"gradio3c",
+				"gradio3d",
+				"gradio3e"
+			],
+			"Control": [
+				"random"
+			],
+			"Volume": "90",
+			"Type": "ui voice player"
+		},
+		"SuperSonic": {
+			"Sounds": [
+				"vaurspa",
+				"vaurspb",
+				"vaurspc",
+				"vaurspd",
+				"vaurspe"
+			],
+			"Attack": [
+				"gradio1a",
+				"gradio1b",
+				"gradio1c",
+				"gradio1d",
+				"gradio1e",
+				"gradio1f"
+			],
+			"Decay": [
+				"gradio3a",
+				"gradio3b",
+				"gradio3c",
+				"gradio3d",
+				"gradio3e"
+			],
+			"Control": [
+				"random"
+			],
+			"Volume": "90",
+			"Type": "ui voice player"
+		},
+		"ModeSuperSonic": {
+			"Sounds": [
+				"vaurmsa",
+				"vaurmsb",
+				"vaurmsc"
+			],
+			"Attack": [
+				"gradio1a",
+				"gradio1b",
+				"gradio1c",
+				"gradio1d",
+				"gradio1e",
+				"gradio1f"
+			],
+			"Decay": [
+				"gradio3a",
+				"gradio3b",
+				"gradio3c",
+				"gradio3d",
+				"gradio3e"
+			],
+			"Control": [
+				"random"
+			],
+			"Volume": "90",
+			"Type": "ui voice player",
+			"Limit": "1"
+		},
+		"LowFuel": {
+			"Sounds": [
+				"vaurfua",
+				"vaurfub",
+				"vaurfuc"
+			],
+			"Attack": [
+				"gradio1a",
+				"gradio1b",
+				"gradio1c",
+				"gradio1d",
+				"gradio1e",
+				"gradio1f"
+			],
+			"Decay": [
+				"gradio3a",
+				"gradio3b",
+				"gradio3c",
+				"gradio3d",
+				"gradio3e"
+			],
+			"Control": [
+				"random"
+			],
+			"Volume": "120",
+			"MinVolume": "110",
+			"Type": "world player global"
+		},
+		"Falling": {
+			"Sounds": [
+				"vaurfaa",
+				"vaurfab",
+				"vaurfac"
+			],
+			"Control": [
+				"random"
+			],
+			"Volume": "100",
+			"MinVolume": "80",
+			"Type": "world shrouded player"
+		},
+		"UpgradeBuster": {
+			"Sounds": [
+				"vauru1a",
+				"vauru1b"
+			],
+			"Attack": [
+				"gradio1a",
+				"gradio1b",
+				"gradio1c",
+				"gradio1d",
+				"gradio1e",
+				"gradio1f"
+			],
+			"Decay": [
+				"gradio3a",
+				"gradio3b",
+				"gradio3c",
+				"gradio3d",
+				"gradio3e"
+			],
+			"Control": [
+				"random"
+			],
+			"Volume": "120",
+			"MinVolume": "110",
+			"Type": "world player global"
+		},
+		"UpgradeBunkerBuster": {
+			"Sounds": [
+				"vauru1a",
+				"vauru1b"
+			],
+			"Attack": [
+				"gradio1a",
+				"gradio1b",
+				"gradio1c",
+				"gradio1d",
+				"gradio1e",
+				"gradio1f"
+			],
+			"Decay": [
+				"gradio3a",
+				"gradio3b",
+				"gradio3c",
+				"gradio3d",
+				"gradio3e"
+			],
+			"Control": [
+				"random"
+			],
+			"Volume": "120",
+			"MinVolume": "110",
+			"Type": "world player global"
+		}
+	},
     "KingRaptor": {
         "Select": {
             "Sounds": [
@@ -8447,99 +8053,6 @@
             "MinVolume": "100",
             "Priority": "high",
             "Type": "world global player"
-        }
-    },
-    "FuelAirAurora": {
-        "Select": {
-            "Sounds": [
-                "vaursea",
-                "vaurseb",
-                "vaursec",
-                "vaursed",
-                "vaursee",
-                "vaursef",
-                "vaufsea",
-                "vaufseb"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Attack": [
-                "gradio1a",
-                "gradio1b",
-                "gradio1c",
-                "gradio1d",
-                "gradio1e",
-                "gradio1f"
-            ],
-            "Decay": [
-                "gradio3a",
-                "gradio3b",
-                "gradio3c",
-                "gradio3d",
-                "gradio3e"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "Create": {
-            "Sounds": [
-                "vaufsea"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Attack": [
-                "gradio1a",
-                "gradio1b",
-                "gradio1c",
-                "gradio1d",
-                "gradio1e",
-                "gradio1f"
-            ],
-            "Decay": [
-                "gradio3a",
-                "gradio3b",
-                "gradio3c",
-                "gradio3d",
-                "gradio3e"
-            ],
-            "Volume": "110",
-            "MinVolume": "100",
-            "Priority": "high",
-            "Type": "world global player"
-        },
-        "Attack": {
-            "Sounds": [
-                "vaurata",
-                "vauratb",
-                "vauratc",
-                "vauratd",
-                "vaurate",
-                "vaufata",
-                "vaufatb",
-                "vaufatc"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Attack": [
-                "gradio1a",
-                "gradio1b",
-                "gradio1c",
-                "gradio1d",
-                "gradio1e",
-                "gradio1f"
-            ],
-            "Decay": [
-                "gradio3a",
-                "gradio3b",
-                "gradio3c",
-                "gradio3d",
-                "gradio3e"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
         }
     },
     "CombatChinook": {
@@ -9032,76 +8545,6 @@
             "Volume": "90",
             "Type": "ui voice player",
             "Limit": "1"
-        }
-    },
-    "DemoKell": {
-        "Select": {
-            "Sounds": [
-                "ijarsea",
-                "ijarseb",
-                "ijarsed",
-                "ijarsee",
-                "ijadsea",
-                "ijadsec"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "Create": {
-            "Sounds": [
-                "ijadseb"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "110",
-            "MinVolume": "100",
-            "Priority": "high",
-            "Type": "world global player"
-        },
-        "ModeDemo": {
-            "Sounds": [
-                "ijadmda",
-                "ijadmdb",
-                "ijadmdc"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player",
-            "Limit": "1"
-        },
-        "AttackDemo": {
-            "Sounds": [
-                "ijada2a",
-                "ijada2b",
-                "ijada2c"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        }
-    },
-    "BossGenTankHunter": {
-        "Select": {
-            "Sounds": [
-                "itansea",
-                "itanseb",
-                "itansec",
-                "itansee",
-                "itansed"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
         }
     },
     "EmperorTank": {

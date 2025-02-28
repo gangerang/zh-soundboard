@@ -71,15 +71,42 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   
     function playRandomSound(unit, action) {
-      // Since our search/filter may have changed the UI, look up the sound info from the full soundData
-      const attributes = soundData[unit][action];
-      const sounds = attributes["Sounds"];
-      if (sounds && sounds.length > 0) {
-        const randomIndex = Math.floor(Math.random() * sounds.length);
-        const soundFile = sounds[randomIndex] + ".wav"; // Append .wav extension
-        const audio = new Audio("sounds/" + soundFile);
-        audio.play();
+      // Retrieve the full attribute info from soundData
+      const unitData = soundData[unit];
+      if (!unitData) {
+        console.error(`Unit "${unit}" not found in sound data.`);
+        return;
       }
+      const attributes = unitData[action];
+      if (!attributes) {
+        console.error(`Action "${action}" not found for unit "${unit}".`);
+        return;
+      }
+  
+      let sounds = attributes["Sounds"];
+      if (!Array.isArray(sounds)) {
+        console.error(`Sounds attribute is not an array for ${unit} - ${action}`);
+        return;
+      }
+      // Filter out empty strings
+      sounds = sounds.filter(sound => sound.trim() !== "");
+      if (sounds.length === 0) {
+        console.error(`No valid sound files for ${unit} - ${action}`);
+        return;
+      }
+      const randomIndex = Math.floor(Math.random() * sounds.length);
+      const soundFile = sounds[randomIndex] + ".wav"; // Append .wav extension
+      const audio = new Audio("sounds/" + soundFile);
+  
+      // Set volume if defined (expects Volume as a percentage)
+      if (attributes["Volume"]) {
+        const vol = parseFloat(attributes["Volume"]);
+        audio.volume = isNaN(vol) ? 1.0 : Math.min(Math.max(vol / 100, 0), 1);
+      } else {
+        audio.volume = 1.0;
+      }
+  
+      audio.play().catch((err) => console.error("Error playing sound:", err));
     }
   });
   

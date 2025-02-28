@@ -354,12 +354,6 @@
         "Unit Type": "Vehicle"
     },
     {
-        "Unit Name": "Aurora",
-        "Unit Code": "Aurora",
-        "Faction": "USA",
-        "Unit Type": "Aircraft"
-    },
-    {
         "Unit Name": "King Raptor",
         "Unit Code": "KingRaptor",
         "Faction": "USA",

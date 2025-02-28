@@ -39,6 +39,12 @@ body {
     border-color: #4caf50;
   }
   
+  /* Unit Type Filter Buttons (use purple when active) */
+  .filter-button.unit-type-filter.active {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+  }
+  
   /* Faction Filter Icon Buttons */
   .filter-button.faction-filter {
     border: 2px solid transparent;
@@ -48,8 +54,19 @@ body {
     margin: 0 5px;
   }
   
-  .filter-button.faction-filter.active {
-    border: 2px solid #4caf50;
+  /* Faction-specific active styles for faction filter icons */
+  .filter-button.faction-filter.faction-usa.active {
+    border: 2px solid #007bff;
+    border-radius: 50%;
+  }
+  
+  .filter-button.faction-filter.faction-gla.active {
+    border: 2px solid #28a745;
+    border-radius: 50%;
+  }
+  
+  .filter-button.faction-filter.faction-china.active {
+    border: 2px solid #e81809;
     border-radius: 50%;
   }
   
@@ -91,17 +108,33 @@ body {
     text-align: center;
   }
   
+  /* Base Action Button Styling */
   .action-button {
     padding: 8px 12px;
     font-size: 14px;
     border: none;
     border-radius: 4px;
-    background-color: #4caf50;
     color: white;
     cursor: pointer;
   }
   
+  /* Faction-based Action Button Colours */
+  /* USA units get blue buttons */
+  .unit-usa .action-button {
+    background-color: #007bff;
+  }
+  
+  /* GLA units get green buttons */
+  .unit-gla .action-button {
+    background-color: #28a745;
+  }
+  
+  /* China units get red buttons */
+  .unit-china .action-button {
+    background-color: #e81809;
+  }
+  
   .action-button:hover {
-    background-color: #45a049;
+    opacity: 0.9;
   }
   

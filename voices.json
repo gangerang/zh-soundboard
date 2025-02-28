@@ -4866,51 +4866,6 @@
             "Type": "world voice shrouded everyone"
         }
     },
-    "CarBomb": {
-        "Select": {
-            "Sounds": [
-                "vcarsea",
-                "vcarseb",
-                "vcarsec",
-                "vcarsed",
-                "vcarsee",
-                "vcarsef"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "Move": {
-            "Sounds": [
-                "vcarmoa",
-                "vcarmob",
-                "vcarmoc",
-                "vcarmod",
-                "vcarmoe"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "Attack": {
-            "Sounds": [
-                "vcarata",
-                "vcaratb",
-                "vcaratc",
-                "vcaratd",
-                "vcarate"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        }
-    },
     "ScorpionTank": {
         "Select": {
             "Sounds": [
@@ -7494,34 +7449,7 @@
             "Type": "ui voice player"
         }
     },
-    "SUV": {
-        "Select": {
-            "Sounds": [
-                "vconsec",
-                "vconsef",
-                "vconmob"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "Move": {
-            "Sounds": [
-                "vconmoa",
-                "vconmoc",
-                "vconmod",
-                "vconmof"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        }
-    },
-	"AuroraBomber": {
+	"Aurora": {
 		"Select": {
 			"Sounds": [
 				"vaufsea",
@@ -7997,53 +7925,6 @@
             "Type": "ui voice player"
         }
     },
-    "AssaultTroopCrawler": {
-        "Select": {
-            "Sounds": [
-                "vtrosea",
-                "vtroseb",
-                "vtrosec",
-                "vtrosed",
-                "vtrosee",
-                "vtrasea",
-                "vtrasec"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "Create": {
-            "Sounds": [
-                "vtraseb"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "110",
-            "MinVolume": "100",
-            "Priority": "high",
-            "Type": "world global player"
-        },
-        "Attack": {
-            "Sounds": [
-                "vtroata",
-                "vtroatb",
-                "vtroatc",
-                "vtroatd",
-                "vtroate",
-                "vtraata",
-                "vtraatb",
-                "vtraatc"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        }
-    },
     "SuperHacker": {
         "Select": {
             "Sounds": [
@@ -8349,40 +8230,6 @@
             "Volume": "90",
             "Type": "ui voice player",
             "Limit": "1"
-        }
-    },
-    "EmperorTank": {
-        "Select": {
-            "Sounds": [
-                "voveseb",
-                "vovesec",
-                "vovesee",
-                "voveseg",
-                "vovecra",
-                "vovesea",
-                "vovesef"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
-        },
-        "Move": {
-            "Sounds": [
-                "vovemob",
-                "vovemoc",
-                "vovemod",
-                "vovemoe",
-                "vovemof",
-                "vovemog",
-                "vovemoa"
-            ],
-            "Control": [
-                "random"
-            ],
-            "Volume": "90",
-            "Type": "ui voice player"
         }
     }
 }

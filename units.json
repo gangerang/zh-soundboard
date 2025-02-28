@@ -42,8 +42,8 @@
         "Unit Type": "Aircraft"
     },
     {
-        "Unit Name": "Aurora Bomber",
-        "Unit Code": "AuroraBomber",
+        "Unit Name": "Aurora",
+        "Unit Code": "Aurora",
         "Faction": "USA",
         "Unit Type": "Aircraft"
     },
@@ -108,7 +108,7 @@
         "Unit Type": "Infantry"
     },
     {
-        "Unit Name": "Battle Master Tank",
+        "Unit Name": "Battlemaster Tank",
         "Unit Code": "BattleMasterTank",
         "Faction": "China",
         "Unit Type": "Vehicle"
@@ -190,12 +190,6 @@
         "Unit Code": "Terrorist",
         "Faction": "GLA",
         "Unit Type": "Infantry"
-    },
-    {
-        "Unit Name": "Car Bomb",
-        "Unit Code": "CarBomb",
-        "Faction": "GLA",
-        "Unit Type": "Vehicle"
     },
     {
         "Unit Name": "Scorpion Tank",
@@ -348,12 +342,6 @@
         "Unit Type": "Aircraft"
     },
     {
-        "Unit Name": "SUV",
-        "Unit Code": "SUV",
-        "Faction": "USA",
-        "Unit Type": "Vehicle"
-    },
-    {
         "Unit Name": "King Raptor",
         "Unit Code": "KingRaptor",
         "Faction": "USA",
@@ -368,12 +356,6 @@
     {
         "Unit Name": "Laser Crusader",
         "Unit Code": "LaserCrusader",
-        "Faction": "USA",
-        "Unit Type": "Vehicle"
-    },
-    {
-        "Unit Name": "Assault Troop Crawler",
-        "Unit Code": "AssaultTroopCrawler",
         "Faction": "USA",
         "Unit Type": "Vehicle"
     },
@@ -406,11 +388,5 @@
         "Unit Code": "DemoRebel",
         "Faction": "GLA",
         "Unit Type": "Infantry"
-    },
-    {
-        "Unit Name": "Emperor Tank",
-        "Unit Code": "EmperorTank",
-        "Faction": "China",
-        "Unit Type": "Vehicle"
     }
 ]

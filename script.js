@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById("searchInput");
     let soundData = {};
   
-    // Fetch the JSON data (place your JSON file in the same directory)
+    // Fetch the JSON data from voices.json
     fetch("voices.json")
       .then((response) => response.json())
       .then((data) => {
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("Error loading sound data:", error);
       });
   
-    // Define main actions (using lower-case for comparison)
+    // Define the main actions (using lowercase for comparison)
     const mainActions = ["create", "select", "move", "attack"];
   
     function renderSoundboard(data) {
@@ -22,20 +22,21 @@ document.addEventListener("DOMContentLoaded", function () {
       for (const unit in data) {
         const unitData = data[unit];
   
-        // Create unit container and title
+        // Create a container for the unit
         const unitContainer = document.createElement("div");
         unitContainer.className = "unit";
+  
+        // Unit title
         const unitTitle = document.createElement("h2");
         unitTitle.textContent = unit;
         unitContainer.appendChild(unitTitle);
   
-        // Create a grid container with 5 columns (4 for main actions and 1 for others)
-        const gridContainer = document.createElement("div");
-        gridContainer.className = "unit-grid";
-  
-        // Create cells for each main action: Create, Select, Move, Attack
+        // Create first row for main actions (Create, Select, Move, Attack)
+        const mainActionsRow = document.createElement("div");
+        mainActionsRow.className = "actions-row main-actions-row";
         mainActions.forEach((actionName) => {
           let foundActionKey = null;
+          // Find an action that matches the main action (case-insensitive)
           for (const action in unitData) {
             if (action.toLowerCase() === actionName) {
               foundActionKey = action;
@@ -43,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
           }
           const cell = document.createElement("div");
-          cell.className = "grid-cell";
+          cell.className = "action-cell";
           if (foundActionKey) {
             const btn = document.createElement("button");
             btn.className = "action-button";
@@ -51,24 +52,24 @@ document.addEventListener("DOMContentLoaded", function () {
             btn.addEventListener("click", () => playRandomSound(unit, foundActionKey));
             cell.appendChild(btn);
           }
-          gridContainer.appendChild(cell);
+          mainActionsRow.appendChild(cell);
         });
+        unitContainer.appendChild(mainActionsRow);
   
-        // Fifth column: Other actions (any actions not in mainActions)
-        const othersCell = document.createElement("div");
-        othersCell.className = "grid-cell";
+        // Create second row for any remaining actions
+        const otherActionsRow = document.createElement("div");
+        otherActionsRow.className = "actions-row other-actions-row";
         for (const action in unitData) {
           if (!mainActions.includes(action.toLowerCase())) {
             const btn = document.createElement("button");
             btn.className = "action-button";
             btn.textContent = action;
             btn.addEventListener("click", () => playRandomSound(unit, action));
-            othersCell.appendChild(btn);
+            otherActionsRow.appendChild(btn);
           }
         }
-        gridContainer.appendChild(othersCell);
+        unitContainer.appendChild(otherActionsRow);
   
-        unitContainer.appendChild(gridContainer);
         soundboardContainer.appendChild(unitContainer);
       }
     }
@@ -111,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error(`Sounds attribute is not an array for ${unit} - ${action}`);
         return;
       }
-      // Filter out any empty strings
+      // Filter out empty strings
       sounds = sounds.filter(sound => sound.trim() !== "");
       if (sounds.length === 0) {
         console.error(`No valid sound files for ${unit} - ${action}`);

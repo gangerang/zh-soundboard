@@ -30,18 +30,17 @@ body {
     margin-top: 0;
   }
   
-  /* Grid layout for actions: 5 columns */
-  .unit-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+  /* Row for actions */
+  .actions-row {
+    display: flex;
+    flex-wrap: wrap;
     gap: 10px;
-    margin-top: 10px;
-  }  
+    margin-bottom: 10px;
+  }
   
-  .grid-cell {
-    background: #fff;
-    padding: 10px;
-    border-radius: 4px;
+  /* Main actions row with 4 equally spaced cells */
+  .main-actions-row .action-cell {
+    flex: 1;
     text-align: center;
   }
   
@@ -54,7 +53,6 @@ body {
     background-color: #4caf50;
     color: white;
     cursor: pointer;
-    margin: 5px;
   }
   
   .action-button:hover {

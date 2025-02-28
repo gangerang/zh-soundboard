@@ -78,8 +78,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const randomIndex = Math.floor(Math.random() * sounds.length);
         const soundFile = sounds[randomIndex] + ".wav"; // Append .wav extension
         const audio = new Audio("sounds/" + soundFile);
-        // Set volume if defined (assumes Volume is given as a percentage)
-        audio.volume = attributes["Volume"] ? parseFloat(attributes["Volume"]) / 100 : 1.0;
         audio.play();
       }
     }

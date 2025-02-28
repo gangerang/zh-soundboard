@@ -14,37 +14,62 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("Error loading sound data:", error);
       });
   
+    // Define main actions (using lower-case for comparison)
+    const mainActions = ["create", "select", "move", "attack"];
+  
     function renderSoundboard(data) {
       soundboardContainer.innerHTML = "";
       for (const unit in data) {
-        const unitSection = document.createElement("div");
-        unitSection.className = "unit";
+        const unitData = data[unit];
+  
+        // Create unit container and title
+        const unitContainer = document.createElement("div");
+        unitContainer.className = "unit";
         const unitTitle = document.createElement("h2");
         unitTitle.textContent = unit;
-        unitSection.appendChild(unitTitle);
+        unitContainer.appendChild(unitTitle);
   
-        const actions = data[unit];
-        for (const action in actions) {
-          const actionDiv = document.createElement("div");
-          actionDiv.className = "action";
+        // Create a grid container with 5 columns (4 for main actions and 1 for others)
+        const gridContainer = document.createElement("div");
+        gridContainer.className = "unit-grid";
   
-          // Label for action
-          const actionLabel = document.createElement("span");
-          actionLabel.textContent = action;
-          actionDiv.appendChild(actionLabel);
+        // Create cells for each main action: Create, Select, Move, Attack
+        mainActions.forEach((actionName) => {
+          let foundActionKey = null;
+          for (const action in unitData) {
+            if (action.toLowerCase() === actionName) {
+              foundActionKey = action;
+              break;
+            }
+          }
+          const cell = document.createElement("div");
+          cell.className = "grid-cell";
+          if (foundActionKey) {
+            const btn = document.createElement("button");
+            btn.className = "action-button";
+            btn.textContent = foundActionKey;
+            btn.addEventListener("click", () => playRandomSound(unit, foundActionKey));
+            cell.appendChild(btn);
+          }
+          gridContainer.appendChild(cell);
+        });
   
-          // Play button for action
-          const playButton = document.createElement("button");
-          playButton.className = "play-button";
-          playButton.textContent = "Play Sound";
-          playButton.addEventListener("click", function () {
-            playRandomSound(unit, action);
-          });
-          actionDiv.appendChild(playButton);
-  
-          unitSection.appendChild(actionDiv);
+        // Fifth column: Other actions (any actions not in mainActions)
+        const othersCell = document.createElement("div");
+        othersCell.className = "grid-cell";
+        for (const action in unitData) {
+          if (!mainActions.includes(action.toLowerCase())) {
+            const btn = document.createElement("button");
+            btn.className = "action-button";
+            btn.textContent = action;
+            btn.addEventListener("click", () => playRandomSound(unit, action));
+            othersCell.appendChild(btn);
+          }
         }
-        soundboardContainer.appendChild(unitSection);
+        gridContainer.appendChild(othersCell);
+  
+        unitContainer.appendChild(gridContainer);
+        soundboardContainer.appendChild(unitContainer);
       }
     }
   
@@ -71,7 +96,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   
     function playRandomSound(unit, action) {
-      // Retrieve the full attribute info from soundData
       const unitData = soundData[unit];
       if (!unitData) {
         console.error(`Unit "${unit}" not found in sound data.`);
@@ -82,13 +106,12 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error(`Action "${action}" not found for unit "${unit}".`);
         return;
       }
-  
       let sounds = attributes["Sounds"];
       if (!Array.isArray(sounds)) {
         console.error(`Sounds attribute is not an array for ${unit} - ${action}`);
         return;
       }
-      // Filter out empty strings
+      // Filter out any empty strings
       sounds = sounds.filter(sound => sound.trim() !== "");
       if (sounds.length === 0) {
         console.error(`No valid sound files for ${unit} - ${action}`);
@@ -105,8 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         audio.volume = 1.0;
       }
-  
-      audio.play().catch((err) => console.error("Error playing sound:", err));
+      audio.play().catch(err => console.error("Error playing sound:", err));
     }
   });
   

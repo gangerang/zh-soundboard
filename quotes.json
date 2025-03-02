@@ -86,5 +86,259 @@
         { "quote": "Missiles should do the trick!", "file": "vhuma2b" },
         { "quote": "Haha, hahaha!", "file": "vhuma2d" },
         { "quote": "Okay, everybody out.", "file": "vhumuna" }
-    ]    
+    ],
+    "Ranger": [
+        {
+            "quote": "What's the mission, sir?",
+            "file": "iranseg"
+        },
+        {
+            "quote": "Need a point man?",
+            "file": "iranseb"
+        },
+        {
+            "quote": "Always prepared.",
+            "file": "iransec"
+        },
+        {
+            "quote": "Ready for action.",
+            "file": "iransef"
+        },
+        {
+            "quote": "Search and destroy!",
+            "file": "iranmoe"
+        },
+        {
+            "quote": "Raid in progress!",
+            "file": "iranata"
+        },
+        {
+            "quote": "Enemy identified!",
+            "file": "iranatc"
+        },
+        {
+            "quote": "He's on the target list!",
+            "file": "iranatd"
+        },
+        {
+            "quote": "The building is ours!",
+            "file": "irancoc"
+        },
+        {
+            "quote": "Our base is under attack!",
+            "file": "iranbaa"
+        },
+        {
+            "quote": "Meet your new owner.",
+            "file": "irancab"
+        },
+        {
+            "quote": "Taking charge!",
+            "file": "irancac"
+        }
+    ],
+    "MissileDefender": [
+        {
+            "quote": "Got my missile launcher right here!",
+            "file": "imissea"
+        },
+        {
+            "quote": "I'll fire at anything.",
+            "file": "imisseb"
+        },
+        {
+            "quote": "Yeah?",
+            "file": "imissec"
+        },
+        {
+            "quote": "Let's pop some tanks!",
+            "file": "imissed"
+        },
+        {
+            "quote": "I wanna blow something up.",
+            "file": "imissee"
+        },
+        {
+            "quote": "This will be fun.",
+            "file": "imisate"
+        }
+    ],
+    "Pathfinder": [
+        {
+            "quote": "Scope, cleaned and mounted.",
+            "file": "ipatsef"
+        },
+        {
+            "quote": "Sniper here.",
+            "file": "ipatsea"
+        },
+        {
+            "quote": "Leaving no trace.",
+            "file": "ipatate"
+        }
+    ],
+    "ColonelBurton": [
+        {
+            "quote": "You want the best? Here I am.",
+            "file": "icolsei"
+        },
+        {
+            "quote": "Colonel Burton here.",
+            "file": "icolsea"
+        },
+        {
+            "quote": "Keeping it cool.",
+            "file": "icolsec"
+        },
+        {
+            "quote": "Trained for perfection.",
+            "file": "icolsee"
+        },
+        {
+            "quote": "I'll be there.",
+            "file": "icolmoa"
+        },
+        {
+            "quote": "Where we going?",
+            "file": "icolmob"
+        },
+        {
+            "quote": "I'll take anything you give me.",
+            "file": "icolmod"
+        },
+        {
+            "quote": "Let's get to the action.",
+            "file": "icolmoe"
+        },
+        {
+            "quote": "I won't be noticed.",
+            "file": "icola2a"
+        },
+        {
+            "quote": "Keep it quiet!",
+            "file": "icola2b"
+        },
+        {
+            "quote": "Just another day's work...",
+            "file": "icola2d"
+        },
+        {
+            "quote": "No obstacles.",
+            "file": "icolclb"
+        },
+        {
+            "quote": "Timed demo charge.",
+            "file": "icolmtb"
+        },
+        {
+            "quote": "Remote demo charge.",
+            "file": "icolmra"
+        },
+        {
+            "quote": "Something to remember me by!",
+            "file": "icola3d"
+        },
+        {
+            "quote": "Got a present for ya!",
+            "file": "icola3f"
+        },
+        {
+            "quote": "I know just what it needs!",
+            "file": "icola3a"
+        }
+    ],
+    "Pilot": [
+        {
+            "quote": "Ejecting.",
+            "file": "ipileja"
+        },
+        {
+            "quote": "Find me a vehicle.",
+            "file": "ipilsea"
+        },
+        {
+            "quote": "Anything to drive?",
+            "file": "ipilseb"
+        }
+    ],
+    "Ambulance": [
+        {
+            "quote": "Out of the way!",
+            "file": "vambmob"
+        },
+        {
+            "quote": "Right on.",
+            "file": "vambmof"
+        },
+        {
+            "quote": "Oof, they look pretty bad.",
+            "file": "vambhef"
+        }
+    ],
+    "CrusaderTank": [
+        {
+            "quote": "USA armor division!",
+            "file": "vcrusef"
+        },
+        {
+            "quote": "Heavy armor, ready for action.",
+            "file": "vcruseb"
+        },
+        {
+            "quote": "How about a show of force?",
+            "file": "vcrusec"
+        },
+        {
+            "quote": "This will wake them up.",
+            "file": "vcruata"
+        },
+        {
+            "quote": "Delivering ordnance.",
+            "file": "vcruatb"
+        },
+        {
+            "quote": "Blow 'em wide open!",
+            "file": "vcruatc"
+        }
+    ],
+    "LaserCrusader": [
+        {
+            "quote": "Laser Crusader ready for engagement!",
+            "file": "vcrlsea"
+        },
+        {
+            "quote": "Keep the power flowing!",
+            "file": "vcrlseb"
+        }
+    ],
+    "PaladinTank": [
+        {
+            "quote": "Preserving freedom.",
+            "file": "vpalseg"
+        },
+        {
+            "quote": "Protecing out people.",
+            "file": "vpalseb"
+        },
+        {
+            "quote": "Is there a threat?",
+            "file": "vpalsec"
+        },
+        {
+            "quote": "Keep it clean.",
+            "file": "vpalsee"
+        },
+        {
+            "quote": "Confirmed.",
+            "file": "vpalmob"
+        },
+        {
+            "quote": "Yes sir.",
+            "file": "vpalmoc"
+        },
+        {
+            "quote": "It's the right thing to do.",
+            "file": "vpalate"
+        }
+    ]
 }

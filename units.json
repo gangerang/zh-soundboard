@@ -342,31 +342,31 @@
         "Unit Type": "Aircraft"
     },
     {
-        "Unit Name": "King Raptor",
+        "Unit Name": "Raptor - King Raptor",
         "Unit Code": "KingRaptor",
         "Faction": "USA",
         "Unit Type": "Aircraft"
     },
     {
-        "Unit Name": "Combat Chinook",
+        "Unit Name": "Chinook - Combat Chinook",
         "Unit Code": "CombatChinook",
         "Faction": "USA",
         "Unit Type": "Aircraft"
     },
     {
-        "Unit Name": "Laser Crusader",
+        "Unit Name": "Crusader Tank - Laser Crusader",
         "Unit Code": "LaserCrusader",
         "Faction": "USA",
         "Unit Type": "Vehicle"
     },
     {
-        "Unit Name": "Super Hacker",
+        "Unit Name": "Hacker - Super Hacker",
         "Unit Code": "SuperHacker",
         "Faction": "China",
         "Unit Type": "Infantry"
     },
     {
-        "Unit Name": "Toxin Rebel",
+        "Unit Name": "Rebel - Toxin Rebel",
         "Unit Code": "ToxinRebel",
         "Faction": "GLA",
         "Unit Type": "Infantry"
@@ -378,13 +378,13 @@
         "Unit Type": "Infantry"
     },
     {
-        "Unit Name": "Toxin RPG Trooper",
+        "Unit Name": "RPG Trooper - Toxin RPG Trooper",
         "Unit Code": "ToxinRPGTrooper",
         "Faction": "GLA",
         "Unit Type": "Infantry"
     },
     {
-        "Unit Name": "Demo Rebel",
+        "Unit Name": "Rebel - Demo Rebel",
         "Unit Code": "DemoRebel",
         "Faction": "GLA",
         "Unit Type": "Infantry"

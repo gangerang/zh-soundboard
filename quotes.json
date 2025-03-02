@@ -1,0 +1,69 @@
+{
+    "BlackLotus": [
+        { "quote": "They're disabled", "file": "iblac2a" },
+        { "quote": "Their building is ours", "file": "iblacoa" },
+        { "quote": "Give me a job", "file": "iblasee" }
+    ],
+    "DozerChina": [
+        { "quote": "China has been generous", "file": "vdocsea" },
+        { "quote": "I build for China", "file": "vdocseb" },
+        { "quote": "We will live in prosperity", "file": "vdocsed" },
+        { "quote": "China will grow larger", "file": "vdocbud" },
+        { "quote": "Building the Chinese Empire", "file": "vdocsef" }
+    ],
+    "DozerUSA": [
+        { "quote": "Let's build", "file": "vdoused" },
+        { "quote": "Good area", "file": "vdoubua" },
+        { "quote": "Made in the U.S. of A", "file": "vdoubub" },
+        { "quote": "Let's get to work", "file": "vdousej" }
+    ],
+    "SupplyTruck": [
+        { "quote": "Let's pick up some goods!", "file": "vsupsef" },
+        { "quote": "There is much money to be made", "file": "vsupseb" },
+        { "quote": "Hehe, very economical.", "file": "vsupmoa" }
+    ],
+    "NukeCannon": [
+        { "quote": "We bear gifts", "file": "vnuksea" },
+        { "quote": "We will be generous.", "file": "vnuksed" },
+        { "quote": "Precious cargo.", "file": "vnukmod" }
+    ],
+    "InfernoCannon": [
+        { "quote": "Everything will go up in smoke.", "file": "vinfsed" },
+        { "quote": "(maniacal laughter)", "file": "vinfseb" },
+        { "quote": "That's a good start.", "file": "vinfmof" }
+    ],
+    "Helix": [
+        { "quote": "Helix on the scene.", "file": "vhelsea" },
+        { "quote": "We're going to ruin somebody's day.", "file": "vhelseb" },
+        { "quote": "They looked so small from up here...!", "file": "vhelatg" }
+    ],
+    "OverlordTank": [
+        { "quote": "Are you ready.", "file": "vovesed" },
+        { "quote": "This is the Overlord Tank.", "file": "vovesea" },
+        { "quote": "It is time.", "file": "voveseb" },
+        { "quote": "I am big.", "file": "vovesec" },
+        { "quote": "Extra large.", "file": "voveseg" },
+        { "quote": "I will finish this.", "file": "voveata" },
+        { "quote": "I will crush.", "file": "vovecra" },
+        { "quote": "They are puny.", "file": "voveatg" }
+    ],
+    "Hacker": [
+        { "quote": "Laptop in hand.", "file": "ihacsea" },
+        { "quote": "I'll suck the Internet dry!", "file": "ihaca2b" }
+    ],
+    "BattleMasterTank": [
+        { "quote": "Serving China's needs.", "file": "vbatsed" },
+        { "quote": "Moving to new area.", "file": "vbatmob" },
+        { "quote": "For the Red Army!", "file": "vbatata" },
+        { "quote": "Attack!", "file": "vbatate" }
+    ],
+    "DragonTank": [
+        { "quote": "It's very hot in here!", "file": "vdraseg" },
+        { "quote": "Release the flames!", "file": "vdraata" }
+    ],
+    "MIG": [
+        { "quote": "Aircraft standing by.", "file": "vmigsea" },
+        { "quote": "Aaaaaaaaaaah!", "file": "vmigfaa" },
+        { "quote": "Chinaaaaa!", "file": "vmigfab2" }
+    ]
+}

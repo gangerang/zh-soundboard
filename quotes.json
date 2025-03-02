@@ -61,7 +61,7 @@
         { "quote": "It's very hot in here!", "file": "vdraseg" },
         { "quote": "Release the flames!", "file": "vdraata" }
     ],
-    "MIG": [
+    "Mig": [
         { "quote": "Aircraft standing by.", "file": "vmigsea" },
         { "quote": "Aaaaaaaaaaah!", "file": "vmigfaa" },
         { "quote": "Chinaaaaa!", "file": "vmigfab2" }

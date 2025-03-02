@@ -166,10 +166,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
         sortedUnitCodes.forEach(unitCode => {
             const unitInfo = combinedData[unitCode];
+            let quotesCombined = "";
+            if (unitInfo.quotes && unitInfo.quotes.length > 0) {
+                quotesCombined = unitInfo.quotes.map(q => q.quote).join(" ");
+            }
             const combinedStr = (
-                unitInfo.unitName + " " + unitInfo.faction + " " + unitInfo.unitType
+                unitInfo.unitName + " " +
+                unitInfo.faction + " " +
+                unitInfo.unitType + " " +
+                quotesCombined
             ).toLowerCase();
-
+        
             // Filter by search query and toggle filters
             if (searchQuery && !combinedStr.includes(searchQuery)) return;
             if (selectedFactions.size > 0 && !selectedFactions.has(unitInfo.faction)) return;

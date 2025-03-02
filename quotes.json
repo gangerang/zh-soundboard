@@ -64,6 +64,27 @@
     "Mig": [
         { "quote": "Aircraft standing by.", "file": "vmigsea" },
         { "quote": "Aaaaaaaaaaah!", "file": "vmigfaa" },
-        { "quote": "Chinaaaaa!", "file": "vmigfab2" }
-    ]
+        { "quote": "Chinaaaaa!", "file": "vmigfab" }
+    ],
+    "Humvee": [
+        { "quote": "Buckle up!", "file": "vhumseg" },
+        { "quote": "Humvee here!", "file": "vhumsea" },
+        { "quote": "How about a lift?", "file": "vhumse" },
+        { "quote": "Alright, let's have some fun!", "file": "vhumsee" },
+        { "quote": "Got room for five!", "file": "vhumsef" },
+        { "quote": "Oh yeah!", "file": "vhummoa" },
+        { "quote": "Let's go for it!", "file": "vhummob" },
+        { "quote": "Looks like a good run!", "file": "vhummod" },
+        { "quote": "Breaking loose!", "file": "vhumoe" },
+        { "quote": "Whoa!", "file": "vhumof" },
+        { "quote": "Whoo, be careful now!", "file": "vhulmob" },
+        { "quote": "Rip it up!", "file": "vhumata" },
+        { "quote": "You want some of this?!", "file": "vhumatb" },
+        { "quote": "Hah, this should be fun!", "file": "vhumatc" },
+        { "quote": "Keep the change.", "file": "vhumatd" },
+        { "quote": "Chew on these!", "file": "vhumate" },
+        { "quote": "Missiles should do the trick!", "file": "vhuma2b" },
+        { "quote": "Haha, hahaha!", "file": "vhuma2d" },
+        { "quote": "Okay, everybody out.", "file": "vhumuna" }
+    ]    
 }

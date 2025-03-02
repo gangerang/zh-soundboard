@@ -154,3 +154,25 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+.mode-toggle-container {
+    margin: 10px 0;
+    text-align: center;
+}
+.mode-toggle {
+    padding: 6px 12px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    background-color: #eee;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.mode-toggle.active {
+    background-color: #4caf50;
+    color: white;
+    border-color: #4caf50;
+}
+.quotes-row .quote-button {
+    width: 100%;
+    margin: 3px 0;
+}

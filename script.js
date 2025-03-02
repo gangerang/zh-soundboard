@@ -2,45 +2,87 @@ document.addEventListener("DOMContentLoaded", function() {
     const soundboardContainer = document.getElementById("soundboard");
     const searchInput = document.getElementById("searchInput");
     const filtersContainer = document.getElementById("filters");
+    const modeToggleContainer = document.getElementById("modeToggle");
     let combinedData = {}; // Keyed by unit code
     let allUnits = [];    // List of unit codes
     let selectedFactions = new Set();
     let selectedUnitTypes = new Set();
+    // Toggle mode: "all", "actions", or "quotes"
+    let toggleMode = "all";
 
-    // Fetch voices.json and units.json concurrently
+    // Load voices.json, units.json, and quotes.json concurrently
     Promise.all([
         fetch("voices.json").then(res => res.json()),
-        fetch("units.json").then(res => res.json())
+        fetch("units.json").then(res => res.json()),
+        fetch("quotes.json").then(res => res.json())
     ])
-    .then(([voicesData, unitsData]) => {
-        // Build combinedData from units.json array joined with voices.json (keyed by Unit Code)
+    .then(([voicesData, unitsData, quotesData]) => {
+        // Build combinedData from units.json joined with voices.json and quotes.json
         unitsData.forEach(unitObj => {
             const unitCode = unitObj["Unit Code"];
             combinedData[unitCode] = {
                 unitName: unitObj["Unit Name"],
                 faction: unitObj["Faction"],
                 unitType: unitObj["Unit Type"],
-                voices: voicesData[unitCode] || {}
+                voices: voicesData[unitCode] || {},
+                quotes: quotesData[unitCode] || []
             };
         });
-        // For any units in voices.json that are not in units.json, add with defaults
+        // For any units in voices.json (or quotes.json) that are not in units.json, add with defaults
         for (const unitCode in voicesData) {
             if (!combinedData.hasOwnProperty(unitCode)) {
                 combinedData[unitCode] = {
                     unitName: unitCode,
                     faction: "unknown",
                     unitType: "unknown",
-                    voices: voicesData[unitCode]
+                    voices: voicesData[unitCode],
+                    quotes: quotesData[unitCode] || []
+                };
+            }
+        }
+        for (const unitCode in quotesData) {
+            if (!combinedData.hasOwnProperty(unitCode)) {
+                combinedData[unitCode] = {
+                    unitName: unitCode,
+                    faction: "unknown",
+                    unitType: "unknown",
+                    voices: voicesData[unitCode] || {},
+                    quotes: quotesData[unitCode]
                 };
             }
         }
         allUnits = Object.keys(combinedData);
 
-        // Render filter buttons and the soundboard
+        // Render mode toggles, filters, and the soundboard
+        renderModeToggle();
         renderFilters();
         renderSoundboard();
     })
     .catch(error => console.error("Error loading data:", error));
+
+    // Render mode toggle buttons ("All", "Actions", "Quotes")
+    function renderModeToggle() {
+        modeToggleContainer.innerHTML = "";
+        const modes = ["all", "actions", "quotes"];
+        modes.forEach(mode => {
+            const btn = document.createElement("button");
+            btn.textContent = mode.charAt(0).toUpperCase() + mode.slice(1);
+            btn.className = "filter-button mode-toggle";
+            if (toggleMode === mode) {
+                btn.classList.add("active");
+            }
+            btn.onclick = () => {
+                toggleMode = mode;
+                // Update active state of mode buttons
+                Array.from(modeToggleContainer.children).forEach(child => {
+                    child.classList.remove("active");
+                });
+                btn.classList.add("active");
+                renderSoundboard();
+            };
+            modeToggleContainer.appendChild(btn);
+        });
+    }
 
     // Render toggleable filter buttons for Faction and Unit Type
     function renderFilters() {
@@ -61,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function() {
         factions.forEach(faction => {
             const btn = document.createElement("button");
             btn.className = "filter-button faction-filter";
-            // Add faction specific class e.g. faction-usa, faction-gla, faction-china
+            // Add faction-specific class (e.g. faction-usa)
             btn.classList.add("faction-" + faction.toLowerCase());
             btn.onclick = () => toggleFilter("faction", faction, btn);
 
@@ -110,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function() {
         renderSoundboard();
     }
 
-    // Render the soundboard based on current filters and search query
+    // Render the soundboard based on current filters, search query, and mode toggle
     function renderSoundboard() {
         soundboardContainer.innerHTML = "";
         const searchQuery = searchInput.value.toLowerCase();
@@ -124,14 +166,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
         sortedUnitCodes.forEach(unitCode => {
             const unitInfo = combinedData[unitCode];
-            // Create a combined string for filtering: unitName, faction, and unitType.
             const combinedStr = (
                 unitInfo.unitName + " " + unitInfo.faction + " " + unitInfo.unitType
             ).toLowerCase();
 
             // Filter by search query if provided
             if (searchQuery && !combinedStr.includes(searchQuery)) return;
-            // Apply toggle filters: if a faction filter is active, unit's faction must be selected.
             if (selectedFactions.size > 0 && !selectedFactions.has(unitInfo.faction))
                 return;
             if (selectedUnitTypes.size > 0 && !selectedUnitTypes.has(unitInfo.unitType))
@@ -140,7 +180,6 @@ document.addEventListener("DOMContentLoaded", function() {
             // Create unit container
             const unitContainer = document.createElement("div");
             unitContainer.className = "unit";
-            // Add faction-specific class (e.g., unit-usa, unit-gla, unit-china)
             unitContainer.classList.add("unit-" + unitInfo.faction.toLowerCase());
 
             // Add unit icon (from images folder using Unit Code)
@@ -150,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function() {
             unitIcon.className = "unit-icon";
             unitContainer.appendChild(unitIcon);
 
-            // Unit title (from units.json)
+            // Unit title
             const unitTitle = document.createElement("h2");
             unitTitle.textContent = unitInfo.unitName;
             unitContainer.appendChild(unitTitle);
@@ -161,52 +200,70 @@ document.addEventListener("DOMContentLoaded", function() {
             classificationInfo.textContent = `Faction: ${unitInfo.faction}, Unit Type: ${unitInfo.unitType}`;
             unitContainer.appendChild(classificationInfo);
 
-            // Render voice actions from voices.json.
-            const voices = unitInfo.voices;
-            const mainActions = ["create", "select", "move", "attack"];
+            // Render voice actions if mode is "all" or "actions"
+            if (toggleMode === "all" || toggleMode === "actions") {
+                const voices = unitInfo.voices;
+                const mainActions = ["create", "select", "move", "attack"];
+                const mainActionsRow = document.createElement("div");
+                mainActionsRow.className = "actions-row main-actions-row";
+                mainActions.forEach(actionName => {
+                    let foundActionKey = null;
+                    for (const action in voices) {
+                        if (action.toLowerCase() === actionName) {
+                            foundActionKey = action;
+                            break;
+                        }
+                    }
+                    if (foundActionKey) {
+                        const btn = document.createElement("button");
+                        btn.className = "action-button";
+                        btn.textContent = foundActionKey;
+                        btn.addEventListener("click", () =>
+                            playRandomSound(unitCode, foundActionKey)
+                        );
+                        mainActionsRow.appendChild(btn);
+                    }
+                });
+                unitContainer.appendChild(mainActionsRow);
 
-            // First row: main actions (buttons only appear if the action exists, left-aligned)
-            const mainActionsRow = document.createElement("div");
-            mainActionsRow.className = "actions-row main-actions-row";
-            mainActions.forEach(actionName => {
-                let foundActionKey = null;
+                // Other actions row
+                const otherActionsRow = document.createElement("div");
+                otherActionsRow.className = "actions-row other-actions-row";
                 for (const action in voices) {
-                    if (action.toLowerCase() === actionName) {
-                        foundActionKey = action;
-                        break;
+                    if (!mainActions.includes(action.toLowerCase())) {
+                        const btn = document.createElement("button");
+                        btn.className = "action-button";
+                        btn.textContent = action;
+                        btn.addEventListener("click", () => playRandomSound(unitCode, action));
+                        otherActionsRow.appendChild(btn);
                     }
                 }
-                if (foundActionKey) {
-                    const btn = document.createElement("button");
-                    btn.className = "action-button";
-                    btn.textContent = foundActionKey;
-                    btn.addEventListener("click", () =>
-                        playRandomSound(unitCode, foundActionKey)
-                    );
-                    mainActionsRow.appendChild(btn);
-                }
-            });
-            unitContainer.appendChild(mainActionsRow);
+                unitContainer.appendChild(otherActionsRow);
+            }
 
-            // Second row: other actions
-            const otherActionsRow = document.createElement("div");
-            otherActionsRow.className = "actions-row other-actions-row";
-            for (const action in voices) {
-                if (!mainActions.includes(action.toLowerCase())) {
-                    const btn = document.createElement("button");
-                    btn.className = "action-button";
-                    btn.textContent = action;
-                    btn.addEventListener("click", () => playRandomSound(unitCode, action));
-                    otherActionsRow.appendChild(btn);
+            // Render quotes if mode is "all" or "quotes"
+            if (toggleMode === "all" || toggleMode === "quotes") {
+                const quotes = unitInfo.quotes;
+                if (quotes.length > 0) {
+                    const quotesRow = document.createElement("div");
+                    quotesRow.className = "actions-row quotes-row";
+                    quotes.forEach(quoteObj => {
+                        const btn = document.createElement("button");
+                        btn.className = "action-button quote-button";
+                        btn.textContent = quoteObj.quote;
+                        btn.addEventListener("click", () =>
+                            playQuoteSound(quoteObj.file)
+                        );
+                        quotesRow.appendChild(btn);
+                    });
+                    unitContainer.appendChild(quotesRow);
                 }
             }
-            unitContainer.appendChild(otherActionsRow);
 
             soundboardContainer.appendChild(unitContainer);
         });
     }
 
-    // Update list when search input changes
     searchInput.addEventListener("input", function() {
         renderSoundboard();
     });
@@ -243,5 +300,11 @@ document.addEventListener("DOMContentLoaded", function() {
             audio.volume = 1.0;
         }
         audio.play().catch(err => console.error("Error playing sound:", err));
+    }
+
+    function playQuoteSound(fileName) {
+        const audio = new Audio("sounds/" + fileName + ".wav");
+        audio.volume = 1.0;
+        audio.play().catch(err => console.error("Error playing quote sound:", err));
     }
 });

@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function() {
         factions.forEach(faction => {
             const btn = document.createElement("button");
             btn.className = "filter-button faction-filter";
-            // Add faction-specific class (e.g. faction-usa)
+            // Add faction-specific class (e.g., faction-usa)
             btn.classList.add("faction-" + faction.toLowerCase());
             btn.onclick = () => toggleFilter("faction", faction, btn);
 
@@ -170,12 +170,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 unitInfo.unitName + " " + unitInfo.faction + " " + unitInfo.unitType
             ).toLowerCase();
 
-            // Filter by search query if provided
+            // Filter by search query and toggle filters
             if (searchQuery && !combinedStr.includes(searchQuery)) return;
-            if (selectedFactions.size > 0 && !selectedFactions.has(unitInfo.faction))
+            if (selectedFactions.size > 0 && !selectedFactions.has(unitInfo.faction)) return;
+            if (selectedUnitTypes.size > 0 && !selectedUnitTypes.has(unitInfo.unitType)) return;
+
+            // If mode is "quotes", only show units that have quotes
+            if (toggleMode === "quotes" && (!unitInfo.quotes || unitInfo.quotes.length === 0)) {
                 return;
-            if (selectedUnitTypes.size > 0 && !selectedUnitTypes.has(unitInfo.unitType))
-                return;
+            }
 
             // Create unit container
             const unitContainer = document.createElement("div");
@@ -226,7 +229,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 });
                 unitContainer.appendChild(mainActionsRow);
 
-                // Other actions row
                 const otherActionsRow = document.createElement("div");
                 otherActionsRow.className = "actions-row other-actions-row";
                 for (const action in voices) {
@@ -234,19 +236,22 @@ document.addEventListener("DOMContentLoaded", function() {
                         const btn = document.createElement("button");
                         btn.className = "action-button";
                         btn.textContent = action;
-                        btn.addEventListener("click", () => playRandomSound(unitCode, action));
+                        btn.addEventListener("click", () =>
+                            playRandomSound(unitCode, action)
+                        );
                         otherActionsRow.appendChild(btn);
                     }
                 }
                 unitContainer.appendChild(otherActionsRow);
             }
 
-            // Render quotes if mode is "all" or "quotes"
+            // Render quotes in one row if mode is "all" or "quotes"
             if (toggleMode === "all" || toggleMode === "quotes") {
                 const quotes = unitInfo.quotes;
-                if (quotes.length > 0) {
+                if (quotes && quotes.length > 0) {
                     const quotesRow = document.createElement("div");
                     quotesRow.className = "actions-row quotes-row";
+                    // Removed quotesRow.style.flexWrap = "nowrap";
                     quotes.forEach(quoteObj => {
                         const btn = document.createElement("button");
                         btn.className = "action-button quote-button";
@@ -259,6 +264,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     unitContainer.appendChild(quotesRow);
                 }
             }
+
 
             soundboardContainer.appendChild(unitContainer);
         });

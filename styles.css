@@ -116,7 +116,7 @@ body {
     border-radius: 4px;
     color: white;
     cursor: pointer;
-  }
+}
   
   /* Faction-based Action Button Colours */
   /* USA units get blue buttons */
@@ -172,7 +172,9 @@ footer a:hover {
     color: white;
     border-color: #4caf50;
 }
-.quotes-row .quote-button {
-    width: 100%;
-    margin: 3px 0;
+.quotes-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
 }

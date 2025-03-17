@@ -340,5 +340,127 @@
             "quote": "It's the right thing to do.",
             "file": "vpalate"
         }
-    ]
+    ],
+	"Worker": [
+		{
+			"quote": "I will work.",
+			"file": "iworseh"
+		},
+		{
+			"quote": "Yes?",
+			"file": "iworsea"
+		},
+		{
+			"quote": "What do you want with me?",
+			"file": "iworseb"
+		},
+		{
+			"quote": "Do not hurt me.",
+			"file": "iworsec"
+		},
+		{
+			"quote": "I will obey.",
+			"file": "iworsed"
+		},
+		{
+			"quote": "I'm just a peasant.",
+			"file": "iworsee"
+		},
+		{
+			"quote": "I'm hungry!",
+			"file": "iworsef"
+		},
+		{
+			"quote": "Cannot we live in peace?",
+			"file": "iworseg"
+		},
+		{
+			"quote": "Ow! Okay, okay, I will work!",
+			"file": "iworsei"
+		},
+		{
+			"quote": "I do what I'm told.",
+			"file": "iwormoa"
+		},
+		{
+			"quote": "I will go.",
+			"file": "iwormob"
+		},
+		{
+			"quote": "Can I have some shoes?",
+			"file": "iwormod"
+		},
+		{
+			"quote": "You change your mind often.",
+			"file": "iwormoe"
+		},
+		{
+			"quote": "Does it have to be so far?",
+			"file": "iwormof"
+		},
+		{
+			"quote": "If that is what you want.",
+			"file": "iworbua"
+		},
+		{
+			"quote": "This is hard work!",
+			"file": "iworbub"
+		},
+		{
+			"quote": "I will do what I must!",
+			"file": "iworbuc"
+		},
+		{
+			"quote": "This hammer is heavy!",
+			"file": "iworbud"
+		},
+		{
+			"quote": "Are there not better tools?",
+			"file": "iworbue"
+		},
+		{
+			"quote": "I will try to hurry.",
+			"file": "iworbuf"
+		},
+		{
+			"quote": "I will do the best I can.",
+			"file": "iworbug"
+		},
+		{
+			"quote": "That building cannot fit there.",
+			"file": "iwornoc"
+		},
+		{
+			"quote": "Our work is complete.",
+			"file": "iworcoa"
+		},
+		{
+			"quote": "I am finished with the building.",
+			"file": "iworcob"
+		},
+		{
+			"quote": "Building construction has been completed.",
+			"file": "iworcoc"
+		},
+		{
+			"quote": "That was a lot of work...",
+			"file": "iworcod"
+		},
+		{
+			"quote": "My hands have splinters!",
+			"file": "iworspc"
+		},
+        {
+            "quote": "I like my new shoes!",
+            "file": "iworu1a"
+        },
+        {
+            "quote": "These shoes fit nicely!",
+            "file": "iworu1b"
+        },
+		{
+			"quote": "Thank you for the new shoes!",
+			"file": "iworu1c"
+		}
+	]
 }

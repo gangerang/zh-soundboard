@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
         renderModeToggle();
         renderFilters();
         renderSoundboard();
+        applyURLParams();
     })
     .catch(error => console.error("Error loading data:", error));
 
@@ -228,9 +229,12 @@ document.addEventListener("DOMContentLoaded", function() {
                         const btn = document.createElement("button");
                         btn.className = "action-button";
                         btn.textContent = foundActionKey;
+                        btn.setAttribute("data-unit", unitCode);
+                        btn.setAttribute("data-action", foundActionKey);
                         btn.addEventListener("click", () =>
                             playRandomSound(unitCode, foundActionKey)
                         );
+                        addCopyLinkEvents(btn, () => generateActionLink(unitCode, foundActionKey));
                         mainActionsRow.appendChild(btn);
                     }
                 });
@@ -243,9 +247,12 @@ document.addEventListener("DOMContentLoaded", function() {
                         const btn = document.createElement("button");
                         btn.className = "action-button";
                         btn.textContent = action;
+                        btn.setAttribute("data-unit", unitCode);
+                        btn.setAttribute("data-action", action);
                         btn.addEventListener("click", () =>
                             playRandomSound(unitCode, action)
                         );
+                        addCopyLinkEvents(btn, () => generateActionLink(unitCode, action));
                         otherActionsRow.appendChild(btn);
                     }
                 }
@@ -263,9 +270,11 @@ document.addEventListener("DOMContentLoaded", function() {
                         const btn = document.createElement("button");
                         btn.className = "action-button quote-button";
                         btn.textContent = quoteObj.quote;
+                        btn.setAttribute("data-sound-file", quoteObj.file);
                         btn.addEventListener("click", () =>
                             playQuoteSound(quoteObj.file)
                         );
+                        addCopyLinkEvents(btn, () => generateQuoteLink(quoteObj.file));
                         quotesRow.appendChild(btn);
                     });
                     unitContainer.appendChild(quotesRow);
@@ -280,6 +289,181 @@ document.addEventListener("DOMContentLoaded", function() {
     searchInput.addEventListener("input", function() {
         renderSoundboard();
     });
+
+    // --- Link generation ---
+
+    function generateSearchLink() {
+        const base = window.location.origin + window.location.pathname;
+        const query = searchInput.value.trim();
+        if (!query) return base;
+        return base + "?q=" + encodeURIComponent(query);
+    }
+
+    function generateActionLink(unitCode, action) {
+        const base = window.location.origin + window.location.pathname;
+        return base + "?unit=" + encodeURIComponent(unitCode)
+                   + "&action=" + encodeURIComponent(action);
+    }
+
+    function generateQuoteLink(fileName) {
+        const base = window.location.origin + window.location.pathname;
+        return base + "?sound=" + encodeURIComponent(fileName);
+    }
+
+    // --- Clipboard and toast ---
+
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            showToast("Link copied!");
+        }).catch(() => {
+            showToast("Failed to copy link");
+        });
+    }
+
+    function showToast(message) {
+        const existing = document.querySelector(".toast");
+        if (existing) existing.remove();
+
+        const toast = document.createElement("div");
+        toast.className = "toast";
+        toast.textContent = message;
+        document.body.appendChild(toast);
+
+        requestAnimationFrame(() => {
+            toast.classList.add("toast-visible");
+        });
+
+        setTimeout(() => {
+            toast.classList.remove("toast-visible");
+            toast.addEventListener("transitionend", () => toast.remove());
+        }, 2000);
+    }
+
+    // --- Copy-link event binding (right-click + long-press) ---
+
+    function addCopyLinkEvents(button, linkGenerator) {
+        button.addEventListener("contextmenu", (e) => {
+            e.preventDefault();
+            copyToClipboard(linkGenerator());
+        });
+        let pressTimer = null;
+        button.addEventListener("touchstart", () => {
+            pressTimer = setTimeout(() => {
+                copyToClipboard(linkGenerator());
+            }, 600);
+        }, { passive: true });
+        button.addEventListener("touchend", () => clearTimeout(pressTimer));
+        button.addEventListener("touchmove", () => clearTimeout(pressTimer));
+    }
+
+    // --- Search copy-link button ---
+
+    const copySearchBtn = document.getElementById("copySearchLink");
+    if (copySearchBtn) {
+        copySearchBtn.addEventListener("click", () => {
+            copyToClipboard(generateSearchLink());
+        });
+    }
+
+    // --- URL parameter handling (auto-play + search pre-fill) ---
+
+    function applyURLParams() {
+        const params = new URLSearchParams(window.location.search);
+
+        const query = params.get("q");
+        if (query) {
+            searchInput.value = query;
+            renderSoundboard();
+        }
+
+        const soundFile = params.get("sound");
+        if (soundFile) {
+            autoPlayQuoteSound(soundFile);
+            return;
+        }
+
+        const unitCode = params.get("unit");
+        const action = params.get("action");
+        if (unitCode && action) {
+            autoPlayActionSound(unitCode, action);
+        }
+    }
+
+    function autoPlayQuoteSound(fileName) {
+        const audio = new Audio("sounds/" + fileName + ".wav");
+        audio.volume = 1.0;
+        audio.play().then(() => {
+            highlightSoundButton(fileName);
+        }).catch(() => {
+            showPlayPrompt(audio);
+            highlightSoundButton(fileName);
+        });
+    }
+
+    function autoPlayActionSound(unitCode, action) {
+        const unitData = combinedData[unitCode];
+        if (!unitData) return;
+        const attributes = unitData.voices[action];
+        if (!attributes) return;
+        let sounds = attributes["Sounds"];
+        if (!Array.isArray(sounds)) return;
+        sounds = sounds.filter(s => s.trim() !== "");
+        if (sounds.length === 0) return;
+
+        const randomIndex = Math.floor(Math.random() * sounds.length);
+        const soundFile = sounds[randomIndex] + ".wav";
+        const audio = new Audio("sounds/" + soundFile);
+        if (attributes["Volume"]) {
+            const vol = parseFloat(attributes["Volume"]);
+            audio.volume = isNaN(vol) ? 1.0 : Math.min(Math.max(vol / 100, 0), 1);
+        } else {
+            audio.volume = 1.0;
+        }
+        audio.play().then(() => {
+            highlightActionButton(unitCode, action);
+        }).catch(() => {
+            showPlayPrompt(audio);
+            highlightActionButton(unitCode, action);
+        });
+    }
+
+    // --- Highlight helpers ---
+
+    function highlightSoundButton(fileName) {
+        const btn = document.querySelector('[data-sound-file="' + fileName + '"]');
+        if (btn) {
+            btn.classList.add("highlight");
+            btn.scrollIntoView({ behavior: "smooth", block: "center" });
+            setTimeout(() => btn.classList.remove("highlight"), 2000);
+        }
+    }
+
+    function highlightActionButton(unitCode, action) {
+        const btn = document.querySelector(
+            '[data-unit="' + unitCode + '"][data-action="' + action + '"]'
+        );
+        if (btn) {
+            btn.classList.add("highlight");
+            btn.scrollIntoView({ behavior: "smooth", block: "center" });
+            setTimeout(() => btn.classList.remove("highlight"), 2000);
+        }
+    }
+
+    // --- Autoplay-blocked fallback ---
+
+    function showPlayPrompt(audio) {
+        const existing = document.querySelector(".play-prompt");
+        if (existing) existing.remove();
+
+        const overlay = document.createElement("div");
+        overlay.className = "play-prompt";
+        overlay.textContent = "Tap to play sound";
+        overlay.addEventListener("click", () => {
+            audio.play();
+            overlay.remove();
+        });
+        document.body.appendChild(overlay);
+    }
 
     function playRandomSound(unitCode, action) {
         const unitData = combinedData[unitCode];
